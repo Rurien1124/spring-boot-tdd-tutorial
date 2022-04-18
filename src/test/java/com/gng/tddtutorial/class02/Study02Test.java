@@ -18,8 +18,13 @@ import org.junit.jupiter.api.condition.OS;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Condition annotations
+ * @author gchyoo
+ *
+ */
 @Slf4j
-@DisplayName("Study01 테스트") // 테스트 명칭 지정
+@DisplayName("Study02 테스트") // 테스트 명칭 지정
 public class Study02Test {
 	
 	@BeforeAll // 모든 메소드 시작 전 실행, static으로 사용

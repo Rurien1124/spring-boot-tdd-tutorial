@@ -20,6 +20,11 @@ import org.junit.jupiter.api.Test;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Asserts
+ * @author gchyoo
+ *
+ */
 @Slf4j
 @DisplayName("Study01 테스트") // 테스트 명칭 지정
 public class Study01Test {
