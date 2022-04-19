@@ -18,12 +18,12 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study06 Å×½ºÆ®")
+@DisplayName("Study06 í…ŒìŠ¤íŠ¸")
 public class Study0601Test {
 	
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
-	@ValueSource(ints = {10, 20, 40}) // Integer°ªÀ» ÆÄ¶ó¹ÌÅÍ·Î ÁöÁ¤, ¸Ş¼­µåÀÇ ÆÄ¶ó¹ÌÅÍ Å¸ÀÔµµ º¯°æÇØ¾ßÇÔ
-	@DisplayName("¹İº¹ Å×½ºÆ®(ÆÄ¶ó¹ÌÅÍ ÀÌ¿ë)")
+	@ValueSource(ints = {10, 20, 40}) // Integerê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì§€ì •, ë©”ì„œë“œì˜ íŒŒë¼ë¯¸í„° íƒ€ì…ë„ ë³€ê²½í•´ì•¼í•¨
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸(íŒŒë¼ë¯¸í„° ì´ìš©)")
 	void parameterizedTest(
 			@ConvertWith(Study06Converter.class) Study06 study06
 			) {
@@ -31,19 +31,19 @@ public class Study0601Test {
 	}
 	
 	/**
-	 * @ValueSource¿¡ ÀÔ·ÂµÈ ÆÄ¶ó¹ÌÅÍ¸¦ Study06 Å¬·¡½ºÀÇ »ı¼ºÀÚ¿¡ ¸Â°Ô º¯°æÇÏ±â À§ÇÑ Å¬·¡½º
+	 * @ValueSourceì— ì…ë ¥ëœ íŒŒë¼ë¯¸í„°ë¥¼ Study06 í´ë˜ìŠ¤ì˜ ìƒì„±ìì— ë§ê²Œ ë³€ê²½í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 	 * @author gchyoo
 	 *
 	 */
 	private static class Study06Converter extends SimpleArgumentConverter {
 
 		/**
-		 * @param source @ValueSource¿¡ ÀÔ·ÂµÈ ÆÄ¶ó¹ÌÅÍ
-		 * @param targetType ÆÄ¶ó¹ÌÅÍ¸¦ º¯È¯ÇÒ Å¬·¡½º Å¸ÀÔ
+		 * @param source @ValueSourceì— ì…ë ¥ëœ íŒŒë¼ë¯¸í„°
+		 * @param targetType íŒŒë¼ë¯¸í„°ë¥¼ ë³€í™˜í•  í´ë˜ìŠ¤ íƒ€ì…
 		 */
 		@Override
 		protected Object convert(Object source, Class<?> targetType) throws ArgumentConversionException {
-			assertEquals(Study06.class, targetType, "Study06 Å¬·¡½º°¡ ¾Æ´Õ´Ï´Ù.");
+			assertEquals(Study06.class, targetType, "Study06 í´ë˜ìŠ¤ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 			
 			return new Study06(Integer.parseInt(source.toString()));
 		}		
