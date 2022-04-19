@@ -1,4 +1,4 @@
-package com.gng.tddtutorial.class06;
+package com.gng.tddtutorial.class07;
 
 import com.gng.tddtutorial.class01.StudyStatus;
 
@@ -11,14 +11,14 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Study06 {
+public class Study07 {
 	private String ILLEGAL_ARGUMENT_EXCEPTION_MESSAGE_MIMIT = "참석 인원은 0보다 커야합니다.";
 	private StudyStatus status = StudyStatus.DRAFT;
 	
 	private int limit = 100;
 	private String name;
 	
-	public Study06(int limit) {
+	public Study07(int limit) {
 		this.limit = limit;
 		
 		if(limit < 0) {
@@ -26,7 +26,7 @@ public class Study06 {
 		}
 	}
 	
-	public Study06(int limit, String name) {
+	public Study07(int limit, String name) {
 		this.limit = limit;
 		this.name = name;
 		

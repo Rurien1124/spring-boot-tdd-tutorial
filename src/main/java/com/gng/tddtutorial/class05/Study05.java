@@ -18,7 +18,7 @@ public class Study05 {
 		this.limit = limit;
 		
 		if(limit < 0) {
-			throw new IllegalArgumentException("Âü¼® ÀÎ¿øÀº 0º¸´Ù Ä¿¾ßÇÕ´Ï´Ù.");
+			throw new IllegalArgumentException("ì°¸ì„ ì¸ì›ì€ 0ë³´ë‹¤ ì»¤ì•¼í•©ë‹ˆë‹¤.");
 		}
 	}
 }

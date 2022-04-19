@@ -26,73 +26,73 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study01 Å×½ºÆ®") // Å×½ºÆ® ¸íÄª ÁöÁ¤
+@DisplayName("Study01 í…ŒìŠ¤íŠ¸") // í…ŒìŠ¤íŠ¸ ëª…ì¹­ ì§€ì •
 public class Study01Test {
 	
-	@BeforeAll // ¸ğµç ¸Ş¼Òµå ½ÃÀÛ Àü ½ÇÇà, staticÀ¸·Î »ç¿ë
+	@BeforeAll // ëª¨ë“  ë©”ì†Œë“œ ì‹œì‘ ì „ ì‹¤í–‰, staticìœ¼ë¡œ ì‚¬ìš©
 	public static void beforeAll() {
 		log.info("Execute beforeAll()");
 	}
 	
-	@AfterAll // ¸ğµç ¸Ş¼Òµå Á¾·á ÈÄ ½ÇÇà, staticÀ¸·Î »ç¿ë
+	@AfterAll // ëª¨ë“  ë©”ì†Œë“œ ì¢…ë£Œ í›„ ì‹¤í–‰, staticìœ¼ë¡œ ì‚¬ìš©
 	public static void afterAll() {
 		log.info("Execute afterAll()");
 	}
 	
 	
-	@BeforeEach // °¢°¢ÀÇ ¸Ş¼Òµå ½ÃÀÛ Àü ½ÇÇà
+	@BeforeEach // ê°ê°ì˜ ë©”ì†Œë“œ ì‹œì‘ ì „ ì‹¤í–‰
 	void beforeEach() {
 		log.info("Execute beforeEach()");
 	}
 	
 	
-	@AfterEach // °¢°¢ÀÇ ¸Ş¼Òµå Á¾·á ÈÄ ½ÇÇà
+	@AfterEach // ê°ê°ì˜ ë©”ì†Œë“œ ì¢…ë£Œ í›„ ì‹¤í–‰
 	void afterEach() {
 		log.info("Execute afterEach()");
 	}
 	
-	@Test // Å×½ºÆ® ÁöÁ¤
-	@DisplayName("»ı¼º Å×½ºÆ®") // Å×½ºÆ® ¸íÄª ÁöÁ¤
+	@Test // í…ŒìŠ¤íŠ¸ ì§€ì •
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸") // í…ŒìŠ¤íŠ¸ ëª…ì¹­ ì§€ì •
 	void create() {
 		log.info("Execute create()");
 		Study01 study01 = new Study01(10);
 		
 		assertNotNull(study01);
 		
-		// ÃÖÃÊ ½ÇÇà ½Ã DRAFT »óÅÂÀÎÁö È®ÀÎ
-		// Expected, Actual, Failure message ¼ø¼­´ë·Î Àû¾î¾ß ÇÔ
+		// ìµœì´ˆ ì‹¤í–‰ ì‹œ DRAFT ìƒíƒœì¸ì§€ í™•ì¸
+		// Expected, Actual, Failure message ìˆœì„œëŒ€ë¡œ ì ì–´ì•¼ í•¨
 		assertEquals(StudyStatus.DRAFT, study01.getStatus(),
-				() -> "½ºÅÍµğÀÇ ÃÊ±â °ªÀÌ " + StudyStatus.DRAFT + "°¡ ¾Æ´Õ´Ï´Ù."); // ¶÷´Ù½Ä »ç¿ë ½Ã ½ÇÆĞÇÏ´Â °æ¿ì°¡ ¾Æ´Ï¸é ¿¬»êÇÏÁö ¾ÊÀ½
+				() -> "ìŠ¤í„°ë””ì˜ ì´ˆê¸° ê°’ì´ " + StudyStatus.DRAFT + "ê°€ ì•„ë‹™ë‹ˆë‹¤."); // ëŒë‹¤ì‹ ì‚¬ìš© ì‹œ ì‹¤íŒ¨í•˜ëŠ” ê²½ìš°ê°€ ì•„ë‹ˆë©´ ì—°ì‚°í•˜ì§€ ì•ŠìŒ
 		
-		// True¸¦ ¹İÈ¯ÇÏ´ÂÁö È®ÀÎ
-		assertTrue(study01.getLimit() > 0, "ÃÖ´ë Âü¼® °¡´É ÀÎ¿øÀº 1¸í ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.");
+		// Trueë¥¼ ë°˜í™˜í•˜ëŠ”ì§€ í™•ì¸
+		assertTrue(study01.getLimit() > 0, "ìµœëŒ€ ì°¸ì„ ê°€ëŠ¥ ì¸ì›ì€ 1ëª… ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.");
 		
-		// ¿¹¿Ü¸¦ ¹İÈ¯ÇÏ´ÂÁö È®ÀÎ
+		// ì˜ˆì™¸ë¥¼ ë°˜í™˜í•˜ëŠ”ì§€ í™•ì¸
 		assertThrows(IllegalArgumentException.class, () -> new Study01(-10));
 		
-		// Æ¯Á¤ ½Ã°£ ¾È¿¡ ³¡³ª´ÂÁö È®ÀÎ
+		// íŠ¹ì • ì‹œê°„ ì•ˆì— ëë‚˜ëŠ”ì§€ í™•ì¸
 		assertTimeout(Duration.ofMillis(1000), () -> {
 			new Study01(10);
 			Thread.sleep(100);
 		});
 
-		// Æ¯Á¤ ½Ã°£ ¾È¿¡ ³¡³ªÁö ¾ÊÀ¸¸é Å×½ºÆ®¸¦ Áß´ÜÇÔ
-		// Transaction ·Ñ¹éÀÌ ¾ÈµÉ ¼ö ÀÖÀ¸¹Ç·Î ÁÖÀÇÇØ¾ß ÇÔ
+		// íŠ¹ì • ì‹œê°„ ì•ˆì— ëë‚˜ì§€ ì•Šìœ¼ë©´ í…ŒìŠ¤íŠ¸ë¥¼ ì¤‘ë‹¨í•¨
+		// Transaction ë¡¤ë°±ì´ ì•ˆë  ìˆ˜ ìˆìœ¼ë¯€ë¡œ ì£¼ì˜í•´ì•¼ í•¨
 		assertTimeoutPreemptively(Duration.ofMillis(1000), () -> {
 			new Study01(10);
 			Thread.sleep(100);
 		});
 		
-		// ¶÷´Ù½ÄÀ» ÀÌ¿ëÇÏ¿© ¸ğµç assert ½ÇÇà
+		// ëŒë‹¤ì‹ì„ ì´ìš©í•˜ì—¬ ëª¨ë“  assert ì‹¤í–‰
 		assertAll(
 				() -> assertEquals(StudyStatus.DRAFT, study01.getStatus(),
-						() -> "½ºÅÍµğÀÇ ÃÊ±â °ªÀÌ " + StudyStatus.DRAFT + "°¡ ¾Æ´Õ´Ï´Ù."), // ¶÷´Ù½Ä »ç¿ë ½Ã ½ÇÆĞÇÏ´Â °æ¿ì°¡ ¾Æ´Ï¸é ¿¬»êÇÏÁö ¾ÊÀ½
-				() -> assertTrue(study01.getLimit() > 0, "ÃÖ´ë Âü¼® °¡´É ÀÎ¿øÀº 1¸í ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.")
+						() -> "ìŠ¤í„°ë””ì˜ ì´ˆê¸° ê°’ì´ " + StudyStatus.DRAFT + "ê°€ ì•„ë‹™ë‹ˆë‹¤."), // ëŒë‹¤ì‹ ì‚¬ìš© ì‹œ ì‹¤íŒ¨í•˜ëŠ” ê²½ìš°ê°€ ì•„ë‹ˆë©´ ì—°ì‚°í•˜ì§€ ì•ŠìŒ
+				() -> assertTrue(study01.getLimit() > 0, "ìµœëŒ€ ì°¸ì„ ê°€ëŠ¥ ì¸ì›ì€ 1ëª… ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.")
 		);
 	}
 	
 	@Test
-	@Disabled // Å×½ºÆ® ºñÈ°¼ºÈ­
+	@Disabled // í…ŒìŠ¤íŠ¸ ë¹„í™œì„±í™”
 	void create01() {
 		log.info("Execute create01()");
 	}

@@ -15,14 +15,14 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study03 Å×½ºÆ®")
+@DisplayName("Study03 í…ŒìŠ¤íŠ¸")
 public class Study03Test {
 
-	// ÅÂ±×¿¡ µû¶ó ½ÇÇàÇÒ Å×½ºÆ®¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖÀ½
+	// íƒœê·¸ì— ë”°ë¼ ì‹¤í–‰í•  í…ŒìŠ¤íŠ¸ë¥¼ ì§€ì •í•  ìˆ˜ ìˆìŒ
 	// Run configurations > Include and exclude tags > Configure
 	@Tag("fast") 
 	@Test
-	@DisplayName("»ı¼º Å×½ºÆ®(ºü¸§)")
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸(ë¹ ë¦„)")
 	void createFast() {
 		log.info("Execute createFast()");
 		
@@ -32,7 +32,7 @@ public class Study03Test {
 
 	@Tag("slow")
 	@Test
-	@DisplayName("»ı¼º Å×½ºÆ®(´À¸²)")
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸(ëŠë¦¼)")
 	void createSlow() {
 		log.info("Execute createSlow()");
 		

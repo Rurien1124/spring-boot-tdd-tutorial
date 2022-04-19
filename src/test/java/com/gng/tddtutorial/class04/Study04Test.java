@@ -14,14 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study04 Å×½ºÆ®")
+@DisplayName("Study04 í…ŒìŠ¤íŠ¸")
 public class Study04Test {
 	
-	// ÅÂ±×¿¡ µû¶ó ½ÇÇàÇÒ Å×½ºÆ®¸¦ ÁöÁ¤ÇÒ ¼ö ÀÖÀ½
+	// íƒœê·¸ì— ë”°ë¼ ì‹¤í–‰í•  í…ŒìŠ¤íŠ¸ë¥¼ ì§€ì •í•  ìˆ˜ ìˆìŒ
 	// Run configurations > Include and exclude tags > Configure
-	@FastTest // Ä¿½ºÅÒ ¾î³ëÅ×ÀÌ¼Ç »ç¿ë
+	@FastTest // ì»¤ìŠ¤í…€ ì–´ë…¸í…Œì´ì…˜ ì‚¬ìš©
 	@Test
-	@DisplayName("»ı¼º Å×½ºÆ®(ºü¸§)")
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸(ë¹ ë¦„)")
 	void createFast() {
 		log.info("Execute createFast()");
 		
@@ -29,9 +29,9 @@ public class Study04Test {
 		assertThat(study04.getLimit()).isGreaterThan(0);
 	}
 
-	@SlowTest // Ä¿½ºÅÒ ¾î³ëÅ×ÀÌ¼Ç »ç¿ë
+	@SlowTest // ì»¤ìŠ¤í…€ ì–´ë…¸í…Œì´ì…˜ ì‚¬ìš©
 	@Test
-	@DisplayName("»ı¼º Å×½ºÆ®(´À¸²)")
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸(ëŠë¦¼)")
 	void createSlow() {
 		log.info("Execute createSlow()");
 		

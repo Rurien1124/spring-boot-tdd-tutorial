@@ -18,22 +18,22 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study02 Å×½ºÆ®") // Å×½ºÆ® ¸íÄª ÁöÁ¤
+@DisplayName("Study02 í…ŒìŠ¤íŠ¸") // í…ŒìŠ¤íŠ¸ ëª…ì¹­ ì§€ì •
 public class Study02Test {
-	@Test // Å×½ºÆ® ÁöÁ¤
-	@DisplayName("»ı¼º Å×½ºÆ®") // Å×½ºÆ® ¸íÄª ÁöÁ¤
-	@EnabledOnOs(value = {OS.WINDOWS, OS.MAC, OS.LINUX}) // OS¿¡ µû¶ó ½ÇÇàÇÏµµ·Ï ¼³Á¤
-//	@EnabledOnJre(value = {JRE.JAVA_8, JRE.JAVA_9, JRE.JAVA_10, JRE.JAVA_11}) // ÀÚ¹Ù ¹öÀü¿¡ µû¶ó ½ÇÇàÇÏµµ·Ï ¼³Á¤
-	@EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "LOCAL", disabledReason = "TEST_ENV °ªÀÌ LOCALÀÌ ¾Æ´Õ´Ï´Ù.") // È¯°æº¯¼ö¿¡ µû¶ó ½ÇÇàÇÏµµ·Ï ¼³Á¤
+	@Test // í…ŒìŠ¤íŠ¸ ì§€ì •
+	@DisplayName("ìƒì„± í…ŒìŠ¤íŠ¸") // í…ŒìŠ¤íŠ¸ ëª…ì¹­ ì§€ì •
+	@EnabledOnOs(value = {OS.WINDOWS, OS.MAC, OS.LINUX}) // OSì— ë”°ë¼ ì‹¤í–‰í•˜ë„ë¡ ì„¤ì •
+//	@EnabledOnJre(value = {JRE.JAVA_8, JRE.JAVA_9, JRE.JAVA_10, JRE.JAVA_11}) // ìë°” ë²„ì „ì— ë”°ë¼ ì‹¤í–‰í•˜ë„ë¡ ì„¤ì •
+	@EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "LOCAL", disabledReason = "TEST_ENV ê°’ì´ LOCALì´ ì•„ë‹™ë‹ˆë‹¤.") // í™˜ê²½ë³€ìˆ˜ì— ë”°ë¼ ì‹¤í–‰í•˜ë„ë¡ ì„¤ì •
 	void create() {
 		log.info("Execute create()");
 		
-		// È¯°æº¯¼ö
+		// í™˜ê²½ë³€ìˆ˜
 		String testEnv = System.getenv("TEST_ENV");
 		log.info("Test env : {}", testEnv);
 		
-		// È¯°æº¯¼ö TEST_ENVÀÇ °ªÀÌ LOCALÀÌ¸é ½ÇÇà
-		assumeTrue("LOCAL".equalsIgnoreCase(testEnv), "TEST_ENV °ªÀÌ LOCALÀÌ ¾Æ´Õ´Ï´Ù.");
+		// í™˜ê²½ë³€ìˆ˜ TEST_ENVì˜ ê°’ì´ LOCALì´ë©´ ì‹¤í–‰
+		assumeTrue("LOCAL".equalsIgnoreCase(testEnv), "TEST_ENV ê°’ì´ LOCALì´ ì•„ë‹™ë‹ˆë‹¤.");
 		
 		Study02 study02 = new Study02(10);
 		

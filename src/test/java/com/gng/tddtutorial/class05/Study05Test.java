@@ -19,23 +19,23 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study05 Å×½ºÆ®")
+@DisplayName("Study05 í…ŒìŠ¤íŠ¸")
 public class Study05Test {
 	
-	@RepeatedTest(value = 10, // Å×½ºÆ® ¹İº¹
-			name = "{displayName}, {currentRepetition}/{totalRepetitions}") // ¹İº¹ ½Ã Ç¥½ÃÇÒ ¸íÄª
-	@DisplayName("¹İº¹ Å×½ºÆ®") // Å×½ºÆ® ¸íÄª(RepeatedTestÀÇ »óÀ§ ·¹º§)
+	@RepeatedTest(value = 10, // í…ŒìŠ¤íŠ¸ ë°˜ë³µ
+			name = "{displayName}, {currentRepetition}/{totalRepetitions}") // ë°˜ë³µ ì‹œ í‘œì‹œí•  ëª…ì¹­
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸") // í…ŒìŠ¤íŠ¸ ëª…ì¹­(RepeatedTestì˜ ìƒìœ„ ë ˆë²¨)
 	void repeatTest(RepetitionInfo repetitionInfo) {
 		log.info("Test : {}", repetitionInfo.getCurrentRepetition());
 	}
 	
-	@ParameterizedTest(name = "{index} {displayName} message={0}") // Å×½ºÆ® ¹İº¹(ÆÄ¶ó¹ÌÅÍ ÀÌ¿ë)
-	@ValueSource(strings = {"Å×½ºÆ®", "ÆÄ¶ó¹ÌÅÍ", "µ¥ÀÌÅÍ"}) // String °ªÀ» ÆÄ¶ó¹ÌÅÍ·Î Ãß°¡(ints, booleans µîÀÌ ÀÖÀ½)
-	@CsvSource({"java, 8"}) // CSV °ªÀ» ÆÄ¶ó¹ÌÅÍ·Î Ãß°¡
-	@EmptySource // ºñ¾îÀÖ´Â ¹®ÀÚ¿­À» ÆÄ¶ó¹ÌÅÍ·Î Ãß°¡(@ValueSource¿Í º°°³·Î Ãß°¡µÊ)
-	@NullSource // NullÀ» ÆÄ¶ó¹ÌÅÍ·Î Ãß°¡
-	@NullAndEmptySource // ºñ¾îÀÖ´Â ¹®ÀÚ¿­°ú NullÀ» ÆÄ¶ó¹ÌÅÍ·Î Ãß°¡(@EmptySource, @NullSource´Â µ¤¾î¾º¿öÁü)
-	@DisplayName("¹İº¹ Å×½ºÆ®(ÆÄ¶ó¹ÌÅÍ ÀÌ¿ë)")
+	@ParameterizedTest(name = "{index} {displayName} message={0}") // í…ŒìŠ¤íŠ¸ ë°˜ë³µ(íŒŒë¼ë¯¸í„° ì´ìš©)
+	@ValueSource(strings = {"í…ŒìŠ¤íŠ¸", "íŒŒë¼ë¯¸í„°", "ë°ì´í„°"}) // String ê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì¶”ê°€(ints, booleans ë“±ì´ ìˆìŒ)
+	@CsvSource({"java, 8"}) // CSV ê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì¶”ê°€
+	@EmptySource // ë¹„ì–´ìˆëŠ” ë¬¸ìì—´ì„ íŒŒë¼ë¯¸í„°ë¡œ ì¶”ê°€(@ValueSourceì™€ ë³„ê°œë¡œ ì¶”ê°€ë¨)
+	@NullSource // Nullì„ íŒŒë¼ë¯¸í„°ë¡œ ì¶”ê°€
+	@NullAndEmptySource // ë¹„ì–´ìˆëŠ” ë¬¸ìì—´ê³¼ Nullì„ íŒŒë¼ë¯¸í„°ë¡œ ì¶”ê°€(@EmptySource, @NullSourceëŠ” ë®ì–´ì”Œì›Œì§)
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸(íŒŒë¼ë¯¸í„° ì´ìš©)")
 	void parameterizedTest(String message) {
 		log.info("{}", message);
 	}

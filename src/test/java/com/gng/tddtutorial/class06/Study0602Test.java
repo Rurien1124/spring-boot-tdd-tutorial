@@ -18,22 +18,22 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-@DisplayName("Study06 Å×½ºÆ®")
+@DisplayName("Study06 í…ŒìŠ¤íŠ¸")
 public class Study0602Test {
 	
 	/**
 	 * <pre>
-	 * CSV °ªÀ» Primitive °ªÀ¸·Î ¹Ş¾Æ
-	 * Study06 Å¬·¡½ºÀÇ »ı¼ºÀÚ·Î °´Ã¼¸¦ »ı¼ºÇÏ´Â ¹æ½Ä 
+	 * CSV ê°’ì„ Primitive ê°’ìœ¼ë¡œ ë°›ì•„
+	 * Study06 í´ë˜ìŠ¤ì˜ ìƒì„±ìë¡œ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ë°©ì‹ 
 	 * </pre>
 	 * @param limit
 	 * @param name
 	 */
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
-	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV °ªÀ» ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·Â, °ø¹éÀÌ µé¾î°¡´Â ¹®ÀÚ¿­Àº ''·Î ¹­¾î¼­ ÀÔ·Â
-	@DisplayName("¹İº¹ Å×½ºÆ®(CSV ÀÌ¿ë)")
+	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV ê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì…ë ¥, ê³µë°±ì´ ë“¤ì–´ê°€ëŠ” ë¬¸ìì—´ì€ ''ë¡œ ë¬¶ì–´ì„œ ì…ë ¥
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸(CSV ì´ìš©)")
 	void parameterizedTestWithPrimitiveType(
-			Integer limit, String name // @CsvSource¿¡¼­ ÀÔ·ÂÇÑ °ªÀ» ÄŞ¸¶·Î ±¸ºĞÇÏ¿© ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·Â¹ŞÀ½
+			Integer limit, String name // @CsvSourceì—ì„œ ì…ë ¥í•œ ê°’ì„ ì½¤ë§ˆë¡œ êµ¬ë¶„í•˜ì—¬ íŒŒë¼ë¯¸í„°ë¡œ ì…ë ¥ë°›ìŒ
 			) {
 		Study06 study06 = new Study06(limit, name);
 		log.info("[{}] {}", study06.getName(), study06.getLimit());
@@ -41,14 +41,14 @@ public class Study0602Test {
 	
 	/**
 	 * <pre>
-	 * ArgumentsAccessor¸¦ »ç¿ëÇÏ¿© CSV°ªÀ» ¹Ş¾Æ
-	 * Study06 Å¬·¡½ºÀÇ »ı¼ºÀÚ·Î °´Ã¼¸¦ »ı¼ºÇÏ´Â ¹æ½Ä
+	 * ArgumentsAccessorë¥¼ ì‚¬ìš©í•˜ì—¬ CSVê°’ì„ ë°›ì•„
+	 * Study06 í´ë˜ìŠ¤ì˜ ìƒì„±ìë¡œ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ë°©ì‹
 	 * </pre>
 	 * @param argumentsAccessor
 	 */
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
-	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV °ªÀ» ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·Â, °ø¹éÀÌ µé¾î°¡´Â ¹®ÀÚ¿­Àº ''·Î ¹­¾î¼­ ÀÔ·Â
-	@DisplayName("¹İº¹ Å×½ºÆ®(ArgumentsAccessor ÀÌ¿ë)")
+	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV ê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì…ë ¥, ê³µë°±ì´ ë“¤ì–´ê°€ëŠ” ë¬¸ìì—´ì€ ''ë¡œ ë¬¶ì–´ì„œ ì…ë ¥
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸(ArgumentsAccessor ì´ìš©)")
 	void parameterizedTestWithArgumentsAccessor(ArgumentsAccessor argumentsAccessor) {
 		Study06 study06 = new Study06(argumentsAccessor.getInteger(0), argumentsAccessor.getString(1));
 		log.info("[{}] {}", study06.getName(), study06.getLimit());
@@ -56,14 +56,14 @@ public class Study0602Test {
 	
 	/**
 	 * <pre>
-	 * ArgumentsAggregator¸¦ »ç¿ëÇÏ¿© CSV°ªÀ» ¹Ş¾Æ
-	 * Study06 Å¬·¡½º·Î ÆÄ¶ó¹ÌÅÍ¸¦ ¹Ş´Â ¹æ½Ä
+	 * ArgumentsAggregatorë¥¼ ì‚¬ìš©í•˜ì—¬ CSVê°’ì„ ë°›ì•„
+	 * Study06 í´ë˜ìŠ¤ë¡œ íŒŒë¼ë¯¸í„°ë¥¼ ë°›ëŠ” ë°©ì‹
 	 * </pre>
 	 * @param study06
 	 */
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
-	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV °ªÀ» ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·Â, °ø¹éÀÌ µé¾î°¡´Â ¹®ÀÚ¿­Àº ''·Î ¹­¾î¼­ ÀÔ·Â
-	@DisplayName("¹İº¹ Å×½ºÆ®(ArgumentsAggregator ÀÌ¿ë)")
+	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV ê°’ì„ íŒŒë¼ë¯¸í„°ë¡œ ì…ë ¥, ê³µë°±ì´ ë“¤ì–´ê°€ëŠ” ë¬¸ìì—´ì€ ''ë¡œ ë¬¶ì–´ì„œ ì…ë ¥
+	@DisplayName("ë°˜ë³µ í…ŒìŠ¤íŠ¸(ArgumentsAggregator ì´ìš©)")
 	void parameterizedTestWithArgumentsAggregator(
 			@AggregateWith(value = Study06Aggregator.class) Study06 study06
 			) {
@@ -71,7 +71,7 @@ public class Study0602Test {
 	}
 	
 	/**
-	 * @CsvSource¿¡ ÀÔ·ÂµÈ ÆÄ¶ó¹ÌÅÍ¸¦ Study06 Å¬·¡½ºÀÇ »ı¼ºÀÚ¿¡ ¸Â°Ô º¯°æÇÏ±â À§ÇÑ Å¬·¡½º
+	 * @CsvSourceì— ì…ë ¥ëœ íŒŒë¼ë¯¸í„°ë¥¼ Study06 í´ë˜ìŠ¤ì˜ ìƒì„±ìì— ë§ê²Œ ë³€ê²½í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 	 * @author gchyoo
 	 *
 	 */

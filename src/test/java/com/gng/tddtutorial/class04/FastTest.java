@@ -8,10 +8,10 @@ import java.lang.annotation.Target;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Target(ElementType.METHOD) // ¸Ş¼Òµå¿¡ »ç¿ë °¡´ÉÇÑ ¾î³ëÅ×ÀÌ¼Ç
-@Retention(RetentionPolicy.RUNTIME) // ¾î³ëÅ×ÀÌ¼Ç Á¤º¸¸¦ ·±Å¸ÀÓ ½ÃÁ¡±îÁö À¯Áö
-@Test // Å×½ºÆ® ¿ëµµÀÇ ¾î³ëÅ×ÀÌ¼Ç
-@Tag("fast") // ÅÂ±× ¼³Á¤
+@Target(ElementType.METHOD) // ë©”ì†Œë“œì— ì‚¬ìš© ê°€ëŠ¥í•œ ì–´ë…¸í…Œì´ì…˜
+@Retention(RetentionPolicy.RUNTIME) // ì–´ë…¸í…Œì´ì…˜ ì •ë³´ë¥¼ ëŸ°íƒ€ì„ ì‹œì ê¹Œì§€ ìœ ì§€
+@Test // í…ŒìŠ¤íŠ¸ ìš©ë„ì˜ ì–´ë…¸í…Œì´ì…˜
+@Tag("fast") // íƒœê·¸ ì„¤ì •
 public @interface FastTest {
 	
 }
