@@ -23,7 +23,7 @@ public class Study03Test {
 	@Tag("fast") 
 	@Test
 	@DisplayName("생성 테스트(빠름)")
-	public void createFast() {
+	void createFast() {
 		log.info("Execute createFast()");
 		
 		Study03 study03 = new Study03(10);
@@ -33,7 +33,7 @@ public class Study03Test {
 	@Tag("slow")
 	@Test
 	@DisplayName("생성 테스트(느림)")
-	public void createSlow() {
+	void createSlow() {
 		log.info("Execute createSlow()");
 		
 		Study03 study03 = new Study03(10);

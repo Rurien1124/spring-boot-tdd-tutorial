@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Custom tag
+ * Parameter
  * @author gchyoo
  *
  */
@@ -24,7 +24,7 @@ public class Study0601Test {
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
 	@ValueSource(ints = {10, 20, 40}) // Integer값을 파라미터로 지정, 메서드의 파라미터 타입도 변경해야함
 	@DisplayName("반복 테스트(파라미터 이용)")
-	public void parameterizedTest(
+	void parameterizedTest(
 			@ConvertWith(Study06Converter.class) Study06 study06
 			) {
 		log.info("Test : {}", study06.getLimit());

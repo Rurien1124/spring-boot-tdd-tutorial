@@ -25,7 +25,7 @@ public class Study05Test {
 	@RepeatedTest(value = 10, // 테스트 반복
 			name = "{displayName}, {currentRepetition}/{totalRepetitions}") // 반복 시 표시할 명칭
 	@DisplayName("반복 테스트") // 테스트 명칭(RepeatedTest의 상위 레벨)
-	public void repeatTest(RepetitionInfo repetitionInfo) {
+	void repeatTest(RepetitionInfo repetitionInfo) {
 		log.info("Test : {}", repetitionInfo.getCurrentRepetition());
 	}
 	
@@ -36,7 +36,7 @@ public class Study05Test {
 	@NullSource // Null을 파라미터로 추가
 	@NullAndEmptySource // 비어있는 문자열과 Null을 파라미터로 추가(@EmptySource, @NullSource는 덮어씌워짐)
 	@DisplayName("반복 테스트(파라미터 이용)")
-	public void parameterizedTest(String message) {
+	void parameterizedTest(String message) {
 		log.info("{}", message);
 	}
 }

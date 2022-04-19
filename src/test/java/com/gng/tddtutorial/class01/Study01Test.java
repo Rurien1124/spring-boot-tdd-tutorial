@@ -41,19 +41,19 @@ public class Study01Test {
 	
 	
 	@BeforeEach // 각각의 메소드 시작 전 실행
-	public void beforeEach() {
+	void beforeEach() {
 		log.info("Execute beforeEach()");
 	}
 	
 	
 	@AfterEach // 각각의 메소드 종료 후 실행
-	public void afterEach() {
+	void afterEach() {
 		log.info("Execute afterEach()");
 	}
 	
 	@Test // 테스트 지정
 	@DisplayName("생성 테스트") // 테스트 명칭 지정
-	public void create() {
+	void create() {
 		log.info("Execute create()");
 		Study01 study01 = new Study01(10);
 		
@@ -93,7 +93,7 @@ public class Study01Test {
 	
 	@Test
 	@Disabled // 테스트 비활성화
-	public void create01() {
+	void create01() {
 		log.info("Execute create01()");
 	}
 }

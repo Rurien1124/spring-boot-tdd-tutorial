@@ -22,7 +22,7 @@ public class Study04Test {
 	@FastTest // 커스텀 어노테이션 사용
 	@Test
 	@DisplayName("생성 테스트(빠름)")
-	public void createFast() {
+	void createFast() {
 		log.info("Execute createFast()");
 		
 		Study04 study04 = new Study04(10);
@@ -32,7 +32,7 @@ public class Study04Test {
 	@SlowTest // 커스텀 어노테이션 사용
 	@Test
 	@DisplayName("생성 테스트(느림)")
-	public void createSlow() {
+	void createSlow() {
 		log.info("Execute createSlow()");
 		
 		Study04 study04 = new Study04(10);

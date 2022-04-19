@@ -25,7 +25,7 @@ public class Study02Test {
 	@EnabledOnOs(value = {OS.WINDOWS, OS.MAC, OS.LINUX}) // OS에 따라 실행하도록 설정
 //	@EnabledOnJre(value = {JRE.JAVA_8, JRE.JAVA_9, JRE.JAVA_10, JRE.JAVA_11}) // 자바 버전에 따라 실행하도록 설정
 	@EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "LOCAL", disabledReason = "TEST_ENV 값이 LOCAL이 아닙니다.") // 환경변수에 따라 실행하도록 설정
-	public void create() {
+	void create() {
 		log.info("Execute create()");
 		
 		// 환경변수

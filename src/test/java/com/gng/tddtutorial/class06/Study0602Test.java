@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Custom tag
+ * CSV
  * @author gchyoo
  *
  */
@@ -32,7 +32,7 @@ public class Study0602Test {
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
 	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV 값을 파라미터로 입력, 공백이 들어가는 문자열은 ''로 묶어서 입력
 	@DisplayName("반복 테스트(CSV 이용)")
-	public void parameterizedTestWithPrimitiveType(
+	void parameterizedTestWithPrimitiveType(
 			Integer limit, String name // @CsvSource에서 입력한 값을 콤마로 구분하여 파라미터로 입력받음
 			) {
 		Study06 study06 = new Study06(limit, name);
@@ -49,7 +49,7 @@ public class Study0602Test {
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
 	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV 값을 파라미터로 입력, 공백이 들어가는 문자열은 ''로 묶어서 입력
 	@DisplayName("반복 테스트(ArgumentsAccessor 이용)")
-	public void parameterizedTestWithArgumentsAccessor(ArgumentsAccessor argumentsAccessor) {
+	void parameterizedTestWithArgumentsAccessor(ArgumentsAccessor argumentsAccessor) {
 		Study06 study06 = new Study06(argumentsAccessor.getInteger(0), argumentsAccessor.getString(1));
 		log.info("[{}] {}", study06.getName(), study06.getLimit());
 	}
@@ -64,7 +64,7 @@ public class Study0602Test {
 	@ParameterizedTest(name = "{index} {displayName} message={0}")
 	@CsvSource({"10, 'TDD Study'", "20, 'Spring boot'"}) // CSV 값을 파라미터로 입력, 공백이 들어가는 문자열은 ''로 묶어서 입력
 	@DisplayName("반복 테스트(ArgumentsAggregator 이용)")
-	public void parameterizedTestWithArgumentsAggregator(
+	void parameterizedTestWithArgumentsAggregator(
 			@AggregateWith(value = Study06Aggregator.class) Study06 study06
 			) {
 		log.info("[{}] {}", study06.getName(), study06.getLimit());
