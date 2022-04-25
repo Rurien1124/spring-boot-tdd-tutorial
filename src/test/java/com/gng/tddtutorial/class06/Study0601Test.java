@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Parameter
+ * Repeated test(Parameter)
  * @author gchyoo
  *
  */

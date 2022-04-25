@@ -14,7 +14,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Custom tag
+ * Repeated test
  * @author gchyoo
  *
  */

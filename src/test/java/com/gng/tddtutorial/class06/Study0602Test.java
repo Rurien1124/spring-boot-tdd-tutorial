@@ -13,7 +13,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * CSV
+ * Repeated test(CSV)
  * @author gchyoo
  *
  */
