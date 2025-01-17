@@ -15,13 +15,13 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
-//@ExtendWith(value = FindSlowTestExtension.class) // 선언으로 extension을 등록(좋지 않은 방법)
+//@ExtendWith(value = FindSlowTestExtension.class) // 선언으로 extension을 등록(동적으로 설정 불가)
 @DisplayName("Study09 테스트")
 public class Study09Test {
 	// 유스케이스나 시나리오, 통합테스트 등을 진행할 때는 테스트 순서가 필요해짐
 
 	/*
-	 * 프로그래밍적으로 extension을 등록(좋은 방법)
+	 * 프로그래밍적으로 extension을 등록(동적으로 설정 가능)
 	 * junit properties를 사용하여 등록할 수도 있지만
 	 * 명시적으로 코드에 등록해주는 것이 나음
 	 */
